@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A clear, practical daily calorie estimate based on your body and routine." />
+    <title>Calorie Compass — Shyam Sundar R</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Shyam Sundar R home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>Shyam Sundar R</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html">Coaching</a>
+          <a class="active" href="calculator.html">Calorie calculator</a>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
+          <a href="consultation.html">Book a consultation</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Your daily energy map</p>
+          <h1>Make your next meal make sense.</h1>
+          <p class="hero-intro">Enter a few details and get a practical calorie range for maintaining, losing, or gaining weight—without the guesswork.</p>
+        </div>
+        <div class="hero-stamp" aria-label="A quick estimate, not a diagnosis">
+          <span class="stamp-number">01</span>
+          <span>quick estimate<br />built for real life</span>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Calorie calculator">
+        <form class="details-panel" id="calorie-form" novalidate>
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Start here</p>
+              <h2>Your baseline</h2>
+            </div>
+            <span class="step-count">01 / 02</span>
+          </div>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Age</span>
+              <div class="input-wrap"><input id="age" name="age" type="number" min="13" max="100" placeholder="28" required /><span>years</span></div>
+            </label>
+            <label class="field">
+              <span>Gender</span>
+              <select id="gender" name="gender" required>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="average">Another / prefer not to say</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Height</span>
+              <div class="input-wrap"><input id="height" name="height" type="number" min="100" max="250" placeholder="165" required /><span>cm</span></div>
+            </label>
+            <label class="field">
+              <span>Weight</span>
+              <div class="input-wrap"><input id="weight" name="weight" type="number" min="30" max="300" placeholder="65" required /><span>kg</span></div>
+            </label>
+          </div>
+
+          <div class="activity-field">
+            <div class="field-label-row">
+              <label for="activity">How much do you move?</label>
+              <span id="activity-value">Moderate</span>
+            </div>
+            <input id="activity" name="activity" type="range" min="0" max="4" value="2" step="1" />
+            <div class="range-labels" aria-hidden="true"><span>Restful</span><span>Some movement</span><span>Very active</span></div>
+            <p class="field-helper" id="activity-description">Exercise 3–5 days a week, plus regular everyday movement.</p>
+          </div>
+
+          <button class="calculate-button" type="submit">
+            <span>Map my calories</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+          <p class="form-error" id="form-error" role="alert" aria-live="polite"></p>
+        </form>
+
+        <section class="results-panel" id="results" aria-live="polite">
+          <div class="result-topline">
+            <p class="eyebrow">Your daily rhythm</p>
+            <span class="result-status" id="result-status">Ready when you are</span>
+          </div>
+          <div class="energy-orbit" id="energy-orbit">
+            <div class="orbit-ring"></div>
+            <div class="orbit-core">
+              <span class="core-label">Maintain</span>
+              <strong id="maintain-calories">—</strong>
+              <span class="core-unit">calories / day</span>
+            </div>
+          </div>
+          <p class="results-message" id="results-message">Your numbers will land here as a simple range, not a rulebook.</p>
+          <div class="goal-list">
+            <article class="goal-row goal-maintain">
+              <span class="goal-icon" aria-hidden="true">↔</span>
+              <div><h3>Maintain weight</h3><p>Keep your current rhythm</p></div>
+              <strong id="maintain-value">—</strong>
+            </article>
+            <article class="goal-row goal-lose">
+              <span class="goal-icon" aria-hidden="true">↘</span>
+              <div><h3>Lose weight</h3><p>Gentle deficit of about 500</p></div>
+              <strong id="lose-value">—</strong>
+            </article>
+            <article class="goal-row goal-gain">
+              <span class="goal-icon" aria-hidden="true">↗</span>
+              <div><h3>Gain weight</h3><p>Steady surplus of about 300</p></div>
+              <strong id="gain-value">—</strong>
+            </article>
+          </div>
+          <p class="disclaimer">Estimates use the Mifflin–St Jeor equation. Your needs can vary with health, goals, and training. This is educational—not medical advice.</p>
+        </section>
+      </section>
+
+      <footer class="site-footer"><span>Shyam Sundar R · Weight-loss coach</span><span>Small inputs. Useful direction.</span></footer>
+    </main>
+  </body>
+</html>

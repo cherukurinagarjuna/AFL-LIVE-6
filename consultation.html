@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Book a consultation with Shyam Sundar R for practical weight-loss coaching." />
+    <title>Book a consultation — Shyam Sundar R</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="consultation.js" defer></script>
+  </head>
+  <body class="consultation-page">
+    <main class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Shyam Sundar R home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>Shyam Sundar R</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html">Coaching</a>
+          <a href="calculator.html">Calorie calculator</a>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
+          <a class="active" href="consultation.html">Book a consultation</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="booking-intro">
+        <p class="eyebrow">Make space for a better start</p>
+        <h1>Book your<br /><span>first conversation.</span></h1>
+        <p>Choose a time that works for you. We’ll use 30 minutes to understand where you are, what you want, and whether coaching with Shyam is the right fit.</p>
+      </section>
+
+      <section class="booking-shell" aria-label="Book a consultation">
+        <div class="calendar-panel">
+          <div class="calendar-heading"><div><p class="eyebrow">Choose a day</p><h2 id="month-label">Month Year</h2></div><div class="calendar-controls"><button type="button" id="previous-month" aria-label="Previous month">←</button><button type="button" id="next-month" aria-label="Next month">→</button></div></div>
+          <div class="weekday-row" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+          <div class="calendar-grid" id="calendar-grid" role="grid" aria-label="Available dates"></div>
+          <p class="calendar-note">Available dates are shown in lime. Select a day to see open times.</p>
+        </div>
+
+        <div class="booking-form-panel">
+          <div class="selected-date"><span class="eyebrow">Your appointment</span><strong id="selected-date">Select a date</strong><span id="selected-time">Then choose a time below</span></div>
+          <div class="time-section"><div class="field-label-row"><label>Available times</label><span id="timezone-label">Local time</span></div><div class="time-slots" id="time-slots"><p class="empty-slots">Pick a date to see available times.</p></div></div>
+          <form id="booking-form" novalidate>
+            <label class="booking-field"><span>Your name</span><input id="booking-name" type="text" autocomplete="name" placeholder="e.g. Ananya Rao" required /></label>
+            <label class="booking-field"><span>Email address</span><input id="booking-email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+            <label class="booking-field"><span>What would you like help with?</span><textarea id="booking-note" rows="3" placeholder="A short note is enough."></textarea></label>
+            <button class="calculate-button" type="submit"><span>Request this appointment</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+            <p class="booking-error" id="booking-error" role="alert" aria-live="polite"></p>
+          </form>
+          <div class="booking-success" id="booking-success" hidden><span class="success-mark">✓</span><h3>Request received.</h3><p id="success-copy">Shyam will be in touch shortly to confirm your consultation.</p><a href="index.html" class="text-link">Back to coaching</a></div>
+        </div>
+      </section>
+
+      <footer class="site-footer"><span>Shyam Sundar R · Weight-loss coach</span><span>Small inputs. Useful direction.</span></footer>
+    </main>
+  </body>
+</html>
